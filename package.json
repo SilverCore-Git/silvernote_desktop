@@ -1,0 +1,89 @@
+{
+  "name": "silvernote",
+  "productName": "Silvernote",
+  "version": "0.0.0",
+  "description": "My Electron application description",
+  "main": "src/app.js",
+  "scripts": {
+    "start": " electron-forge start",
+    "dev": "DEV=true electron-forge start",
+    "build": "electron-builder",
+    "build:win": "electron-builder --win",
+    "build:mac": "electron-builder --mac",
+    "build:linux": "electron-builder --linux",
+    "maj:front": "node scripts/maj_front",
+    "icon": "npx electron-icon-maker --input=resources/icon.png --output=resources"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Silvercore",
+    "url": "https://www.silvercore.fr"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "electron-log": "^5.4.1",
+    "electron-updater": "^6.6.2",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "unzipper": "^0.12.3",
+    "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.8.1",
+    "@electron-forge/core": "^7.8.1",
+    "electron": "^22.3.23",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.silvercore.silvernote",
+    "productName": "Silvernote",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "SilverCore-Git",
+        "repo": "silvernote"
+      }
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "files": [
+      "src/**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "resources/icons/win/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "installerIcon": "resources/icons/win/icon.ico",
+      "uninstallerIcon": "resources/icons/win/icon.ico",
+      "installerHeaderIcon": "resources/icons/win/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": false
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "icon": "resources/icons/mac/icon.icns",
+      "category": "public.app-category.productivity",
+      "darkModeSupport": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
+      "category": "Utility",
+      "icon": "resources/icons/png",
+      "maintainer": "silvercore",
+      "description": "Application de prise de note simple et intuitive."
+    }
+  }
+}
