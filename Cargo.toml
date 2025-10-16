@@ -1,0 +1,12 @@
+[package]
+name = "test_rust_securekey"
+version = "0.1.0"
+edition = "2024"
+authors = ["SilverCore Inc."]
+
+[dependencies]
+cargo-wix = "0.3.9"
+image = { version = "0.25.8", features = ["png", "ico", "jpeg"] }
+tao = "0.34.3"
+winreg = "0.55.0"
+wry = "0.53.3"
