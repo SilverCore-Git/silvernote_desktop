@@ -75,7 +75,7 @@
             Compressed='yes'
             InstallScope='perMachine'
             SummaryCodepage='1252'
-            />
+        />
 
         <MajorUpgrade
             Schedule='afterInstallInitialize'

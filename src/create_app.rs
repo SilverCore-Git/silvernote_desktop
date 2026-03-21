@@ -8,7 +8,8 @@ use wry::Result;
 
 use crate::structs::App;
 
-pub fn launch(app: App) -> Result<()> {
+pub fn launch(app: App) -> Result<()> 
+{
 
     let event_loop = EventLoop::new();
 

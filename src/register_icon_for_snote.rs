@@ -2,7 +2,9 @@ use winreg::enums::*;
 use winreg::RegKey;
 use std::io;
 
-pub fn launch(icon_path: &str) -> io::Result<()> {
+pub fn launch(icon_path: &str) -> io::Result<()> 
+{
+
     // Racine : HKEY_CURRENT_USER\Software\Classes
     let hkcu = RegKey::predef(HKEY_CURRENT_USER);
     let (classes, _) = hkcu.create_subkey("Software\\Classes")?;
@@ -21,4 +23,5 @@ pub fn launch(icon_path: &str) -> io::Result<()> {
 
     println!("✅ Icône enregistrée pour .snote : {}", icon_path);
     Ok(())
+    
 }
