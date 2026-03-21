@@ -2,14 +2,6 @@
 name = "silvernote"
 version = "0.1.0"
 edition = "2024"
-authors = ["SilverCore Inc."]
+authors = ["Silvercore"]
 
 [dependencies]
-cargo-wix = "0.3.9"
-image = { version = "0.25.8", features = ["png", "ico", "jpeg"] }
-tao = "0.34.3"
-wry = "0.54.4"
-tauri = { version = "2.10.3", default-features = false }
-
-[target.'cfg(windows)'.dependencies]
-winreg = "0.56"
